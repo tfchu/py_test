@@ -42,14 +42,13 @@ class Car(object):
 def main():
     """main function to test the code
     """
-    #print('hello python')
     car = Car()
-    baggage1 = Baggage()
-    baggage2 = Baggage()
     # dependency 1
+    baggage1 = Baggage()
     baggage1.weight = 60
-    car.add_baggage(baggage1)
+    baggage2 = Baggage()
     baggage2.weight = 20
+    car.add_baggage(baggage1)
     car.add_baggage(baggage2)
     car.get_weight_from_baggage_list()
     # dependency 2
