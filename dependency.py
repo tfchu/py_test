@@ -27,6 +27,8 @@ class Car(object):
         print(self.weight)
 
 def main():
+    """main function to test the code
+    """
     #print('hello python')
     car = Car()
     car.add_baggage_weight(Baggage(60))
