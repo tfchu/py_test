@@ -4,11 +4,10 @@ demonstrate class dependency
 class Baggage(object):
     """Baggage class
     """
-    def __init__(self, weight):
-        self.weight = weight
+    def __init__(self):
+        self.weight = 0
     def get_weight(self):
         """return the baggage weight
-        Returns: weight of the baggage
         """
         return self.weight
 
@@ -17,23 +16,46 @@ class Car(object):
     """
     def __init__(self):
         self.weight = 0
-    def add_baggage_weight(self, baggage):
-        """add one more baggage weight
+        self.baggages = []
+    def add_baggage(self, baggage):
+        """add baggage to list, dependency 1: Y object as method argument
         """
+        self.baggages.append(baggage)
+    def add_baggage_weight(self, weight):
+        """add one more baggage weight, dependency 2: Y object inside method
+        """
+        baggage = Baggage()
+        baggage.weight = weight
         self.weight += baggage.get_weight()
-    def get_total_baggage_weight(self):
-        """print total baggage weight
+    def get_weight_from_baggage_list(self):
+        """print total baggage weight from list
         """
-        print(self.weight)
+        weight = 0
+        for baggage in self.baggages:
+            weight += baggage.get_weight()
+        print("Total weight from baggages: " + str(weight))
+    def get_weight_from_weight(self):
+        """print total baggage weight from weight attribute
+        """
+        print("Total weight from weight: " + str(self.weight))
 
 def main():
     """main function to test the code
     """
     #print('hello python')
     car = Car()
-    car.add_baggage_weight(Baggage(60))
-    car.add_baggage_weight(Baggage(20))
-    car.get_total_baggage_weight()
+    baggage1 = Baggage()
+    baggage2 = Baggage()
+    # dependency 1
+    baggage1.weight = 60
+    car.add_baggage(baggage1)
+    baggage2.weight = 20
+    car.add_baggage(baggage2)
+    car.get_weight_from_baggage_list()
+    # dependency 2
+    car.add_baggage_weight(60)
+    car.add_baggage_weight(20)
+    car.get_weight_from_weight()
 
 if __name__ == "__main__":
     main()
