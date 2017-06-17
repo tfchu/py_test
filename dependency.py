@@ -1,5 +1,6 @@
 '''
 demonstrate class dependency
+X uses Y, short term relationship
 '''
 class Baggage(object):
     """Baggage class
@@ -16,7 +17,7 @@ class Car(object):
     """
     def __init__(self):
         self.weight = 0
-        self.baggages = []
+        self.baggages = []  # association used here
     def add_baggage(self, baggage):
         """add baggage to list, dependency 1: Y object as method argument
         """
