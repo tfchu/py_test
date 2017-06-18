@@ -1,5 +1,5 @@
 '''
-demonstate inheritance, e.g. Taxi inheritates Car
+demonstate inheritance, e.g. Taxi inherits Car
 '''
 class Car():
     '''show car brand and model'''
@@ -12,7 +12,7 @@ class Car():
     def get_model(self):
         '''get car model'''
         print('Car model is {}'.format(self.model))
-# Taxi inheritates Car, put Car as Taxi Class argument
+# Taxi inherits Car, put Car as Taxi Class argument
 class Taxi(Car):
     '''show taxi company, additional attribute/method to car'''
     def __init__(self, brand, model, company):
@@ -32,4 +32,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-    
