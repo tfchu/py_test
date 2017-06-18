@@ -20,11 +20,13 @@ class Car(object):
         self.weight = 0
         self.baggages = []  # association used here
     def add_baggage(self, baggage):
-        """add baggage to list, dependency 1: Y object as method argument
+        """add baggage to list
+        dependency 1: Y object as method argument
         """
         self.baggages.append(baggage)
     def add_baggage_weight(self, weight):
-        """add one more baggage weight, dependency 2: Y object inside method
+        """add one more baggage weight
+        dependency 2: Y object inside method
         """
         baggage = Baggage()
         baggage.weight = weight

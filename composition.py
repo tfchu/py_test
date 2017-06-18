@@ -14,7 +14,8 @@ class Airplane(object):
     def __init__(self):
         self.x_coord = 0
         self.y_coord = 0
-        # composition: bitmap object is initialized in constructor
+        # composition: bitmap object is an attribute of airplane
+        # and initialized in constructor
         self.bitmap = Bitmap()
     def move(self, x_coord, y_coord):
         '''set x, y coordinate to draw'''
