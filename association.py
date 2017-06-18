@@ -1,6 +1,7 @@
 '''
 demonstrate association
 X knows Y, long term relationship
+Y is used as class attribute
 '''
 class Author(object):
     '''contain information about the book author'''
@@ -25,7 +26,7 @@ class Book(object):
             print(author.get_name())
 
 def main():
-    '''main fucntion to print name of all authors of a book'''
+    '''main function to print name of all authors of a book'''
     book = Book()
     book.add_author(Author('Tony'))
     book.add_author(Author('Alice'))
@@ -33,4 +34,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-    

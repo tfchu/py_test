@@ -1,6 +1,7 @@
 '''
 demonstrate class dependency
 X uses Y, short term relationship
+Y is used as method argument or inside method, when method is executed Y is released
 '''
 class Baggage(object):
     """Baggage class
