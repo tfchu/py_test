@@ -1,7 +1,7 @@
 '''
 demonstrate association
 X knows Y, long term relationship
-Y is used as class attribute
+Y is used as X class's attribute
 '''
 class Author(object):
     '''contain information about the book author'''

@@ -1,6 +1,7 @@
 '''
 composition
 X contains Y, no other object contains Y
+Y is used as X's class attribute
 X & Y have the same life cycle
 '''
 class Bitmap(object):
