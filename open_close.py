@@ -55,7 +55,7 @@ def main():
     asia_data.displays.append(CurrentConditionDisplay())
     asia_data.displays.append(StatisticsDisplay())
     asia_data.displays.append(ForecastDisplay())
-    asia_data.notify()
+    asia_data.notify()  # one method gets all updated data, and show in all displays
 
 if __name__ == '__main__':
     main()
