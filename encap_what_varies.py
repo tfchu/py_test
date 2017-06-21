@@ -1,5 +1,6 @@
 '''
 Demonstrate "encapsulate what varies"
+-> parts that varies easily in a class are moved to independent concrete classes
 Composition class defines the layout of an article
 Component class defines the component type (either graph or text)
 Compositor abstract base class (or interface), defines the common methods for all compositors
