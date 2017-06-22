@@ -25,17 +25,17 @@ class Compositor(metaclass=ABCMeta):
 class DefaultCompositor(Compositor):
     '''default compositor'''
     def compose(self):
-        print('Default compositor')
+        print('Using default compositor')
 
 class TextCompositor(Compositor):
     '''Text compositor'''
     def compose(self):
-        print('Text compositor')
+        print('Using text compositor')
 
 class NewCompositor(Compositor):
     '''newly added compositor'''
     def compose(self):
-        print('New compositor')
+        print('Using new compositor')
 
 #component
 class ComponentType(Enum):
@@ -53,13 +53,17 @@ class Component(object):
 class Composition(object):
     '''the entire composition components and layout'''
     def __init__(self):
+        self.compositor = None
         self.components = []
     def add_component(self, component):
         '''add new component to the composition'''
         self.components.append(component)
-    def arranges(self, compositor):
+    def set_compositor(self, compositor):
+        '''dynamically set the compositor type'''
+        self.compositor = compositor
+    def arranges(self):
         '''decides the layout based on component type'''
-        compositor.compose()
+        self.compositor.compose()
 
 def main():
     '''test the code'''
@@ -72,14 +76,14 @@ def main():
 
     for component in composition.components:
         if component.type == ComponentType.graph:
-            compositor = DefaultCompositor()
+            composition.set_compositor(DefaultCompositor())
         elif component.type == ComponentType.text:
-            compositor = TextCompositor()
+            composition.set_compositor(TextCompositor())
         elif component.type == ComponentType.new:
-            compositor = NewCompositor()
+            composition.set_compositor(NewCompositor())
         else:
-            compositor = DefaultCompositor()
-        composition.arranges(compositor)
+            composition.set_compositor(DefaultCompositor())
+        composition.arranges()
 
 if __name__ == '__main__':
     main()
