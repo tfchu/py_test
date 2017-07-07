@@ -32,7 +32,7 @@ def test():
     print(tmp)
     x[multiple_of_three_index] = tmp                    # replace original elements with new values
     print(x)
-    print(x.reshape(5, 7))                              # convert back to 5 x 7 arrau
+    print(x.reshape(5, 7))                              # convert back to 5 x 7 array
     
 
 if __name__ == '__main__':
