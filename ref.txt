@@ -1,0 +1,6 @@
+http://www.bogotobogo.com/python/python_functions_lambda.php
+
+
+Multithreading/Multiprocessing
+http://chriskiehl.com/article/parallelism-in-one-line/
+https://www.ploggingdev.com/2017/01/multiprocessing-and-multithreading-in-python-3/
